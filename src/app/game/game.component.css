@@ -1,0 +1,258 @@
+.game-container {
+  text-align: center;
+  display: block;
+  margin-top: 20%;
+}
+
+/* Modal Styling */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+}
+
+.modal-content input {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+
+/* Container for the hangman game */
+.hangman-container {
+  margin: 20px auto;
+  width: 200px;
+  height: 300px;
+  position: relative;
+  border-radius: 5px;
+  background: lightgrey;
+}
+
+/* Hangman drawing container */
+.hangman-stage {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Hangman parts */
+.hangman-base {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100px;
+  height: 10px;
+  background-color: black;
+  transform: translateX(-50%);
+}
+
+.hangman-pole {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: 10px;
+  height: 200px;
+  background-color: black;
+  transform: translateX(-50%);
+}
+
+.hangman-beam {
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  width: 100px;
+  height: 10px;
+  background-color: black;
+  transform: translateX(-50%);
+}
+
+.hangman-rope {
+  position: absolute;
+  bottom: 180px;
+  left: 30px;
+  width: 10px;
+  height: 20px;
+  background-color: black;
+}
+
+.hangman-head {
+  position: absolute;
+  bottom: 147px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 50%;
+  background: black;
+}
+
+.hangman-body {
+  position: absolute;
+  bottom: 100px;
+  left: 30px;
+  width: 10px;
+  height: 50px;
+  background-color: black;
+}
+
+.hangman-arm-left {
+  position: absolute;
+  bottom: 121px;
+  left: -10px;
+  width: 40px;
+  height: 10px;
+  background-color: black;
+  transform: rotate(135deg);
+  transform-origin: right bottom;
+}
+
+.hangman-arm-right {
+  position: absolute;
+  bottom: 142px;
+  left: 4px;
+  width: 40px;
+  height: 10px;
+  background-color: black;
+  transform: rotate(45deg);
+  transform-origin: left bottom;
+}
+
+.hangman-leg-left {
+  position: absolute;
+  bottom: 88px;
+  left: 40px;
+  width: 40px;
+  height: 10px;
+  background-color: black;
+  transform: rotate(135deg);
+  transform-origin: left top;
+}
+
+.hangman-leg-right {
+  position: absolute;
+  bottom: 91px;
+  left: -10px;
+  width: 40px;
+  height: 10px;
+  background-color: black;
+  transform: rotate(-135deg);
+  transform-origin: right top;
+}
+
+/* Styling for the form and inputs */
+form {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the main title and guesses */
+h1 {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  font-family: 'Arial', sans-serif;
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Overall background styling */
+body {
+  background-color: #f0f2f5;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.game-message {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.congratulations {
+  color: green;
+}
+
+.lost {
+  color: red;
+}
+
+.start-over-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.start-over-button:hover {
+  background-color: darkgreen;
+}

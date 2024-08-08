@@ -1,0 +1,49 @@
+<!-- Modal for Movie Name Input -->
+<div *ngIf="showModal" class="modal">
+  <div class="modal-content">
+    <h2>Enter Movie Name</h2>
+    <form (submit)="startGame()">
+      <input type="text" [(ngModel)]="movieName" name="movieName" placeholder="Enter movie name" required>
+      <button type="submit">Start Game</button>
+    </form>
+  </div>
+</div>
+
+<!-- Hangman Game -->
+<div *ngIf="!showModal">
+  <div class="game-container" *ngIf="currentGame$ | async as game">
+    <h1>{{ game.clue }}</h1>
+    <div class="hangman-container">
+      <div class="hangman-stage">
+        <div class="hangman-base"></div>
+        <div *ngIf="wrongGuesses.length > 0" class="hangman-pole"></div>
+        <div *ngIf="wrongGuesses.length > 1" class="hangman-beam"></div>
+        <div *ngIf="wrongGuesses.length > 2" class="hangman-rope"></div>
+        <div *ngIf="wrongGuesses.length > 3" class="hangman-head"></div>
+        <div *ngIf="wrongGuesses.length > 4" class="hangman-body"></div>
+        <div *ngIf="wrongGuesses.length > 5" class="hangman-arm hangman-arm-left"></div>
+        <div *ngIf="wrongGuesses.length > 6" class="hangman-arm hangman-arm-right"></div>
+        <div *ngIf="wrongGuesses.length > 7" class="hangman-leg hangman-leg-left"></div>
+        <div *ngIf="wrongGuesses.length > 8" class="hangman-leg hangman-leg-right"></div>
+      </div>
+    </div>
+    <p>{{ displayWord.join(' ') }}</p>
+    <p>Guesses: {{ wrongGuesses.join(', ') }}</p>
+    <form *ngIf="gameStatus === 'playing'" (submit)="onGuess($event)">
+      <input type="text" [(ngModel)]="guess" name="guess" placeholder="Enter your guess" required>
+      <button type="submit">Guess</button>
+    </form>
+
+    <!-- Status Messages -->
+    <div *ngIf="gameStatus === 'won'" class="game-message congratulations">
+      <h2>Congratulations!</h2>
+      <p>You guessed the movie correctly!</p>
+      <button (click)="resetGame()" class="start-over-button">START OVER</button>
+    </div>
+    <div *ngIf="gameStatus === 'lost'" class="game-message lost">
+      <h2>YOU LOST!</h2>
+      <p>The movie was: {{ movieName }}</p>
+      <button (click)="resetGame()" class="start-over-button">START OVER</button>
+    </div>
+  </div>
+</div>
