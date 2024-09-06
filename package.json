@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "npm run ng",
     "start": "npm run ng serve",
-    "build": "npm run ng build --configuration=production",
+    "build": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/npm run ng build --configuration=production",
     "watch": "npm run ng build --watch --configuration development",
     "test": "npm run ng test"
   },
